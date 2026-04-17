@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Mario George | Backend Engineer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mario George | Machine Learning Engineer</title>
 
 <style>
 /* GLOBAL */
@@ -44,6 +45,13 @@ section{
   margin:auto;
 }
 
+section h2{
+  font-size:28px;
+  margin-bottom:25px;
+  padding-bottom:10px;
+  border-bottom:2px solid #334155;
+}
+
 /* HERO */
 .hero{
   display:flex;
@@ -56,6 +64,7 @@ section{
 .hero img{
   width:150px;
   border-radius:50%;
+  border:3px solid #38bdf8;
 }
 
 .hero-text h1{
@@ -102,11 +111,46 @@ section{
   cursor:pointer;
   border-radius:6px;
   transition:0.3s;
+  border-left:4px solid #38bdf8;
 }
 
 .project:hover{
   background:#334155;
   transform:translateY(-4px);
+}
+
+.project-tags{
+  margin-top:8px;
+  font-size:13px;
+  color:#64748b;
+}
+
+.project-tags span{
+  background:#334155;
+  padding:3px 8px;
+  border-radius:3px;
+  margin-right:5px;
+  font-family:monospace;
+}
+
+/* SKILLS */
+.skills-grid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:20px;
+}
+
+.skill{
+  background:#1e293b;
+  padding:8px 16px;
+  border-radius:4px;
+  font-size:14px;
+  border:1px solid #334155;
+}
+
+.skill:hover{
+  border-color:#38bdf8;
 }
 
 /* MODALS */
@@ -118,27 +162,73 @@ section{
   width:100%;
   height:100%;
   background:rgba(0,0,0,0.8);
+  z-index:20;
 }
 
 .modal-content{
   background:#1e293b;
   margin:10% auto;
-  padding:20px;
+  padding:30px;
   width:60%;
-  border-radius:6px;
+  border-radius:8px;
+  border-top:3px solid #38bdf8;
+}
+
+.modal-content p{
+  line-height:1.7;
+  color:#cbd5e1;
+}
+
+.modal-content .tech{
+  margin-top:15px;
+  color:#38bdf8;
+  font-weight:bold;
+}
+
+.modal-content .links{
+  margin-top:15px;
+}
+
+.modal-content .links a{
+  color:#38bdf8;
+  text-decoration:none;
+  margin-right:15px;
+}
+
+.modal-content .links a:hover{
+  text-decoration:underline;
 }
 
 .close{
   float:right;
   cursor:pointer;
-  font-size:20px;
+  font-size:24px;
+  color:#94a3b8;
+}
+
+.close:hover{
+  color:white;
 }
 
 /* FOOTER */
 footer{
   text-align:center;
   padding:40px;
-  color:#94a3b8;
+  color:#64748b;
+  font-size:14px;
+}
+
+footer a{
+  color:#38bdf8;
+  text-decoration:none;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .hero{flex-direction:column;text-align:center;}
+  .hero img{margin-bottom:15px;}
+  .modal-content{width:90%;}
+  .btn{display:block;margin:10px auto;width:60%;text-align:center;}
 }
 </style>
 </head>
@@ -150,22 +240,22 @@ footer{
   <a href="#home">Home</a>
   <a href="#about">About</a>
   <a href="#projects">Projects</a>
+  <a href="#skills">Skills</a>
   <a href="#contact">Contact</a>
 </nav>
 
 <!-- HERO -->
 <section id="home">
   <div class="hero">
-    <img src="cv.jpg" alt="Profile Picture">
+    <img src="cv.jpg" alt="Mario George">
     <div class="hero-text">
-      <h1>Mario George</h1><!-- name -->
-      <h2>Backend Engineer</h2><!-- job -->
-      <h3>I Don’t Design Buttons. I Design Engines.</h3><!-- slogan -->
-      <p>I build scalable APIs, distributed systems, and backend architectures.</p> <!-- more elaboration -->
+      <h1>Mario George</h1>
+      <h2>Machine Learning Engineer | Backend Developer</h2>
+      <h3>Building AI that understands Arabic.</h3>
+      <p>Data Science student specializing in computer vision, reinforcement learning, and Arabic NLP. Currently building Scenarai &mdash; a 7-layer AI narrative context engine.</p>
       <a href="#projects" class="btn">View Projects</a>
-      <a href="https://github.com/marioromeo7" target="_blank" class="btn">GitHub</a><!-- github account -->
-      <a href="https://www.linkedin.com/in/mario-george-5945a9296" target="_blank" class="btn">LinkedIn</a> <!-- linkedin account --> 
-      <a href="https://www.facebook.com/mario.romeo.359" target="_blank" class="btn">Facebook</a> <!-- facebook account -->
+      <a href="https://github.com/marioromeo7" target="_blank" class="btn">GitHub</a>
+      <a href="https://www.linkedin.com/in/mario-george-5945a9296" target="_blank" class="btn">LinkedIn</a>
     </div>
   </div>
 </section>
@@ -173,74 +263,159 @@ footer{
 <!-- ABOUT -->
 <section id="about">
   <h2>About</h2>
-  <p>
-    I am a backend-focused developer building reliable systems and APIs.
-    I specialize in scalable platforms and distributed architectures.
-  </p> <!-- job description -->
+  <p style="line-height:1.8; color:#cbd5e1;">
+    I am a Data Science student and backend developer based in Alexandria, Egypt. I specialize in building machine learning systems that solve real-world problems, with a particular focus on computer vision, reinforcement learning, and Arabic NLP.
+  </p>
+  <p style="line-height:1.8; color:#cbd5e1; margin-top:15px;">
+    My recent work includes a CNN ensemble model for diabetic retinopathy detection combining ResNet50, VGG16, and a custom architecture using bagging. I also built a financial portfolio optimizer using SAC reinforcement learning, and an OCR API that processes documents in both Arabic and English.
+  </p>
+  <p style="line-height:1.8; color:#cbd5e1; margin-top:15px;">
+    I am passionate about making AI systems that work well with Arabic language and cultural context &mdash; an area I believe is significantly underserved in the current ML landscape.
+  </p>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
   <h2>Projects</h2>
-  <div class="project" onclick="openModal('p1')">RX – Multi-Tenant Laravel Project (Internship)</div> <!-- project 1 -->
-  <div class="project" onclick="openModal('p2')">OCR Flask API</div> <!-- project 2 -->
-  <div class="project" onclick="openModal('p3')">Issabel Open Source IVR</div> <!-- project 3 -->
+
+  <div class="project" onclick="openModal('p1')">
+    CNN Ensemble for Diabetic Retinopathy Detection
+    <div class="project-tags">
+      <span>TensorFlow</span><span>Keras</span><span>ResNet50</span><span>VGG16</span><span>Bagging</span>
+    </div>
+  </div>
+
+  <div class="project" onclick="openModal('p2')">
+    Robo-Advisor AI &mdash; SAC Reinforcement Learning Portfolio Optimizer
+    <div class="project-tags">
+      <span>PyTorch</span><span>SAC RL</span><span>Data Pipeline</span><span>Retrain Scripts</span>
+    </div>
+  </div>
+
+  <div class="project" onclick="openModal('p3')">
+    Arabic &amp; English OCR Document Processing API
+    <div class="project-tags">
+      <span>Python</span><span>Flask</span><span>OCR</span><span>Arabic NLP</span><span>REST API</span>
+    </div>
+  </div>
+
+  <div class="project" onclick="openModal('p4')">
+    Scenarai &mdash; 7-Layer AI Narrative Context Engine
+    <div class="project-tags">
+      <span>Python</span><span>Groq</span><span>NLP</span><span>Context Management</span>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <span class="skill">Python</span>
+    <span class="skill">TensorFlow</span>
+    <span class="skill">PyTorch</span>
+    <span class="skill">Keras</span>
+    <span class="skill">Machine Learning</span>
+    <span class="skill">Deep Learning</span>
+    <span class="skill">Computer Vision</span>
+    <span class="skill">NLP</span>
+    <span class="skill">Reinforcement Learning</span>
+    <span class="skill">Arabic NLP</span>
+    <span class="skill">OCR</span>
+    <span class="skill">Flask</span>
+    <span class="skill">Laravel</span>
+    <span class="skill">PHP</span>
+    <span class="skill">PostgreSQL</span>
+    <span class="skill">MySQL</span>
+    <span class="skill">REST APIs</span>
+    <span class="skill">Git</span>
+    <span class="skill">Linux</span>
+  </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
   <h2>Contact</h2>
-  <p>Email: <a href="mailto:metrymarioromeo546@gmail.com" style="color:#38bdf8; text-decoration:none;">metrymarioromeo546@gmail.com</a></p>
-  <p>Phone: +20 120 093 8964</p>
+  <p style="line-height:2;">
+    Email: <a href="mailto:metrymarioromeo546@gmail.com" style="color:#38bdf8; text-decoration:none;">metrymarioromeo546@gmail.com</a><br>
+    LinkedIn: <a href="https://www.linkedin.com/in/mario-george-5945a9296" target="_blank" style="color:#38bdf8; text-decoration:none;">linkedin.com/in/mario-george</a><br>
+    GitHub: <a href="https://github.com/marioromeo7" target="_blank" style="color:#38bdf8; text-decoration:none;">github.com/marioromeo7</a><br>
+    Location: Alexandria, Egypt
+  </p>
 </section>
 
 <footer>
-    © 2026 Mario George
-    <p>Teammate Portfolio: 
-        <a href="khaled/index.html" target="_blank" class="btn">
-            View Khaled's Portfolio
-        </a>
-    </p>
+  &copy; 2026 Mario George
 </footer>
 
 <!-- PROJECT MODALS -->
+
+<!-- P1: CNN Diabetic Retinopathy -->
 <div id="p1" class="modal">
   <div class="modal-content">
-    <span class="close" onclick="closeModal('p1')">X</span>
-    <h2>RX – Multi-Tenant Laravel Project (Internship)</h2>
+    <span class="close" onclick="closeModal('p1')">&times;</span>
+    <h2>CNN Ensemble for Diabetic Retinopathy Detection</h2>
     <p>
-      Worked as an intern on a multi-tenant Laravel application. Contributed to backend features, API endpoints, and tenant-specific data handling. Project is proprietary; code is not publicly available.
+      A multi-architecture ensemble CNN that combines ResNet50, VGG16, and a custom-built convolutional network using bagging (bootstrap aggregating) to classify diabetic retinopathy into five severity levels. The ensemble approach improves classification robustness by leveraging the complementary strengths of different architectures, achieving strong performance on fundus retina images.
     </p>
-    <p>Tech Used: PHP, Laravel, MySQL, Redis</p>
+    <p>The project includes complete training pipelines, data augmentation strategies, and evaluation metrics for each individual model as well as the combined ensemble prediction.</p>
+    <p class="tech">Tech: TensorFlow, Keras, ResNet50, VGG16, NumPy, OpenCV</p>
+    <div class="links">
+      <a href="https://github.com/marioromeo7/cnn-diabetic-retinopathy" target="_blank">View on GitHub &rarr;</a>
+    </div>
   </div>
 </div>
 
+<!-- P2: Robo-Advisor -->
 <div id="p2" class="modal">
   <div class="modal-content">
-    <span class="close" onclick="closeModal('p2')">X</span>
-    <h2>OCR Flask API</h2>
+    <span class="close" onclick="closeModal('p2')">&times;</span>
+    <h2>Robo-Advisor AI &mdash; SAC Reinforcement Learning Portfolio Optimizer</h2>
     <p>
-      Built a Flask-based OCR API that extracts text from images and returns structured JSON. Supports multiple file formats. Can be deployed for testing or demonstration.
+      A financial portfolio optimization system built on Soft Actor-Critic (SAC) reinforcement learning. The agent learns to allocate assets dynamically by maximizing risk-adjusted returns through interaction with historical and live market data. Includes a complete data pipeline for market data ingestion, feature engineering, and automated retraining scripts that keep the model updated as new data becomes available.
     </p>
-    <p>Tech Used: Python, Flask, Tesseract OCR</p>
+    <p>The system treats portfolio allocation as a continuous action space problem, where the agent learns optimal diversification strategies without relying on traditional mean-variance approaches.</p>
+    <p class="tech">Tech: PyTorch, SAC Reinforcement Learning, pandas, yfinance, scikit-learn</p>
+    <div class="links">
+      <a href="https://github.com/marioromeo7/robo-advisor-ai" target="_blank">View on GitHub &rarr;</a>
+    </div>
   </div>
 </div>
 
+<!-- P3: OCR -->
 <div id="p3" class="modal">
   <div class="modal-content">
-    <span class="close" onclick="closeModal('p3')">X</span>
-    <h2>Issabel Open Source IVR</h2>
+    <span class="close" onclick="closeModal('p3')">&times;</span>
+    <h2>Arabic &amp; English OCR Document Processing API</h2>
     <p>
-      Contributed to the Issabel IVR open source project, adding multi-dongle SIP trunk support and improving call routing. Contributions available in GitHub forks or pull requests.
+      A RESTful API built with Flask that extracts and structures text from document images in both Arabic and English. Handles the unique challenges of right-to-left (RTL) text recognition, mixed-language content within the same document, and complex document layouts. Returns structured JSON output suitable for integration with downstream systems.
     </p>
-    <p>Tech Used: PHP, Asterisk, Issabel, Linux</p>
+    <p>Designed for production deployment with support for multiple image formats and batch processing capabilities.</p>
+    <p class="tech">Tech: Python, Flask, Tesseract OCR, Arabic NLP, REST API</p>
+    <div class="links">
+      <a href="https://github.com/marioromeo7/ocr" target="_blank">View on GitHub &rarr;</a>
+    </div>
   </div>
 </div>
 
+<!-- P4: Scenarai -->
+<div id="p4" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('p4')">&times;</span>
+    <h2>Scenarai &mdash; 7-Layer AI Narrative Context Engine</h2>
+    <p>
+      An AI system designed to maintain coherent long-form storytelling across multiple characters and plot threads. Uses a 7-layer context management architecture with sovereignty-based memory, meaning each character's knowledge, perspective, and emotional state is tracked independently. This prevents logical inconsistencies &mdash; for example, a character cannot reference information they have not yet learned within the narrative.
+    </p>
+    <p>The engine uses layered prompt construction with model selection routing to optimize both quality and latency. Built with Groq for fast inference, the system demonstrates that narrative coherence is fundamentally a context management problem, not just a prompt engineering challenge.</p>
+    <p class="tech">Tech: Python, Groq API, NLP, Context Management, Prompt Engineering</p>
+  </div>
+</div>
+
+<!-- MODAL SCRIPT -->
 <script>
-// MODAL SCRIPT
 function openModal(id){document.getElementById(id).style.display="block";}
 function closeModal(id){document.getElementById(id).style.display="none";}
+window.onclick=function(event){if(event.target.classList.contains('modal')){event.target.style.display="none";}}
 </script>
 
 </body>
